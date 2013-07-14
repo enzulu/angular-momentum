@@ -1,36 +1,107 @@
+!!! 5
 html(ng-app="Momentum")
   head
     title Angular Momentum
-
+  
     // import the bootstrap stylesheets
     link(href='/lib/bootstrap/css/bootstrap.css', rel='stylesheet')
     link(href='/lib/bootstrap/css/bootstrap-responsive.css', rel='stylesheet')
 
     // import the css styles we created in the /css/ folder
-    link(href='/css/styles.css', rel='stylesheet')
+    //link(href='/css/styles.css', rel='stylesheet')
 
     // import the jquery, bootstrap, and Angular JS libraries
     script(src='/lib/jquery-1.9.1.js') 
     script(src='/lib/bootstrap/js/bootstrap.js')
     script(src='/lib/angular-1.1.5/angular.js')
-
+    
     // import the javascript code we created in the /js/ folder
     script(src='/js/app.js', type='text/javascript')
     script(src='/js/message.js', type='text/javascript')
     script(src='/js/directives.js', type='text/javascript')
+    script(src='/js/donate.js', type='text/javascript')
 
-  body
-   h1 Insert Name Here
-   h2 Five words to describe project.
-   input(type="text", ng-model = "yourName", placeholder="ALL THE MONEY" )
-    DONATE
-   p This is what you gave: {{yourName}}
-   p {{yourName}} {{yourName}}  
-  
-  
+  body  
+    // main div
+    div.row-fluid
+      div.span12
+        h1.text-center The Best Cow Ever
+        h4.text-center Better than your average cow.      
+        div.row-fluid
+          div.span9
+            div.row-fluid  
+              div.span9
+                div.row-fluid
+                  div.span6
+                    img(src='/lib/bootstrap/img/cow.jpg', class="img-rounded")
+                  div.span6
+                    img(src='/lib/bootstrap/img/cow2.jpg', class="img-rounded")
+                div.row-fluid
+                  div.span6
+                    img(src='/lib/bootstrap/img/cow3.jpg', class="img-rounded")
+                  div.span6
+                    img(src='/lib/bootstrap/img/cow4.jpg', class="img-rounded")
+                p <small>This cow is better than most other mammals.</small>
+              div.span3
+                p
+                  | You won't believe how good this cow is. It has four legs, more than most
+                  | human beings. Freakin' human beings only have 2 legs on average. And this
+                  | cow has EYES like humans too. Some humans' eyes don't even work. Freakin'
+                  | astonishing, if you ask me.
+                p
+                  | You only need to give this mofo some grass and water and it can freakin'
+                  | <em>GENERATE ENERGY</em> for its own survival. Pure magic magnet miracles right there.
+                p
+                  | A wise man once said that the world revolved around the sun. That man's dead right now.
+                  | This cow is still alive, and probably is aware of the sun as well.
+                  | Don't take your chances. Donate for this cow now.  
+          div.span3
+            div.row-fluid.well.well-small
+              div.control-group
+                div.controls
+                  div.input-prepend
+                   span.add-on
+                      i.icon-user
+                    input(type="text", id="donateName", placeholder="Name")
+              
+              div.control-group      
+                div.input-prepend
+                  div.controls
+                    span.add-on
+                      i.icon-gift  
+                    input(type="text", id="donateMoney", placeholder="Donation")
+              div.span4.offset3
+                button(id='donateButton', class='btn btn-success btn-large')  Donate!
+              div.row-fluid
+                div.span12
+                  h3#totalHeader 
+                  h2#goalHeader
+              div.row-fluid
+                div.progress.progress-striped.span12
+                  div(class="bar", style"width:0%", id="goalBar")
+              div.row-fluid
+                table.table.table-striped
+                  caption My gracious donators:
+                  thead
+                    tr
+                      th Name
+                      th Donation
+                  tbody#donateList
+                  
+
+            
 
 
-   
+
+
+
+
+
+
+    
+
+
+     
 
 
 
